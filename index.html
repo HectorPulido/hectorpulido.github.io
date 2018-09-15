@@ -3,66 +3,126 @@
     <head>
         <title>Hector Pulido - Just Me</title>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
         
-        <link rel="stylesheet" href="Css/Base.css">
-        <link rel="stylesheet" href="Css/Index.css">
+        <!-- Bootstrap core CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+
+        <link rel="stylesheet" href="css/Base.css">
+        <link rel="stylesheet" href="css/Index.css">
     </head>
-    <body>
-        <header>
-            <div class="navbar-nav">
-                    <a class="nav-item" href="#sobremi">Home</a>
-                    <a class="nav-item" href="#redesSociales">Blog</a>
-                    <a class="nav-item" href="#blog">Experimentos</a>
-                    <a class="nav-item" href="#blog">Contactame</a>
-            </div>
-        </header>
+    <body class="text-center">
+            <header class="masthead mb-auto">
+                <div class="inner">
+                    <nav class="nav nav-masthead justify-content-center">
+                        <a class="nav-link active" href="#">Home</a>
+                        <a class="nav-link" href="#">Sobre mi</a>
+                        <a class="nav-link" href="#">Blog</a>
+                        <a class="nav-link" href="#">Experimentos</a>
+                        <a class="nav-link" href="#">Contactame</a>
+                    </nav>
+                </div>
+            </header>
+
         <section id="hero">
-                <h1>Hector Pulido</h1>
-                <div class="bar"></div>
-                <p>Estudiante de ingenieria mecatronica amante del #MachineLearning y el #Blockchain, Solo un fanático de #GameDev con delirios de Youtuber, y ahora de Streamer.</p>
-                <a href="#sobremi"><i class="fas fa-chevron-down down"></i></a>
+            <h1>Hector Pulido</h1>
+            <div class="bar"></div>
+            <p>Estudiante de ingenieria mecatronica amante del #MachineLearning y el #Blockchain, Solo un fanático de #GameDev con delirios de Youtuber, y ahora de Streamer.</p>
+            <a href="#sobremi"><i class="fas fa-chevron-down down"></i></a>
         </section>
+
         <section id="sobremi">
-            <div class="descripcion">
-                <div id="fotoSobreMi">                
+            <div id="descripcion" class="row">
+                <div id="fotoSobreMi" class="col-md-4">                
                     <img  src="Images/Perfil.jpg" alt="Mi imagen de perfil">
                 </div>
-                <div>
+                <div class="col-md-8">
                     <h2>@Hector_Pulido_</h2>
                     <div class="bar"></div>
                     <p>Amo el desarrollo de videojuegos y el machine learning, cuando puedo juntar ambas cosas el mundo se vuelve un lugar magico, es por eso que quiero que tu mundo se vuelva un lugar magico tambien.
                             Mi nombre es <b>Hector Pulido</b> y tengo 21 años, mi sueño es hacer el mundo un lugar un poquito (solo un poquito, enserio) mejor para todos. Empece desde muy temprano con esto de la programacion, a estas alturas manejo C#, Python, Javascript y algunos mas como Matlab y Arduino</p>
                 </div>
             </div>
-            <div id="Redes">
-                <div class="col-md-4">
-                    <a href="https://www.youtube.com/c/hectorAndresPulidoPalmar"><i class="fab fa-youtube fa-4x"></i></a>
-                    <a href="https://www.youtube.com/c/hectorAndresPulidoPalmar"><h2>YOUTUBE</h2></a>
-                    <p>Con mis videos quiero que mas personas puedan aprender cosas nuevas de modo que su mundo cambie</p>
-                </div>
-                <div class="col-md-4">                         
-                    <a href="https://twitter.com/Hector_Pulido_"><i class="fab fa-twitter fa-4x"></i></a>
-                    <a href="https://twitter.com/Hector_Pulido_"><h2>Twitter</h2></a>
-
-                    <p>Pienso luego existo, pero si no twitteo mis pensamientos es como si no los hubiera twitteado nunca</p>
-                </div>
-                <div class="col-md-4">
-                    <a href="https://www.twitch.tv/hector_pulido_"><i class="fab fa-twitch fa-4x"></i></a>
-                    <a href="https://www.twitch.tv/hector_pulido_"><h2>Twitch</h2></a>
-                    <p>Amo interactuar con la gente, es por eso que estoy haciendo streams en donde hago experimentos super divertidos</p>
-                </div>
-                    
+            <div class="column">
+                <div id="Redes" class="row">
+                    <div class="col-md-4">
+                        <a href="https://www.youtube.com/c/hectorAndresPulidoPalmar"><i class="fab fa-youtube fa-4x"></i></a>
+                        <a href="https://www.youtube.com/c/hectorAndresPulidoPalmar"><h2>YOUTUBE</h2></a>
+                        <p>Con mis videos quiero que mas personas puedan aprender cosas nuevas de modo que su mundo cambie</p>
+                    </div>
+                    <div class="col-md-4">                         
+                        <a href="https://twitter.com/Hector_Pulido_"><i class="fab fa-twitter fa-4x"></i></a>
+                        <a href="https://twitter.com/Hector_Pulido_"><h2>Twitter</h2></a>
+                        <p>Pienso luego existo, pero si no twitteo mis pensamientos es como si no los hubiera twitteado nunca</p>
+                    </div>
+                    <div class="col-md-4">
+                        <a href="https://www.twitch.tv/hector_pulido_"><i class="fab fa-twitch fa-4x"></i></a>
+                        <a href="https://www.twitch.tv/hector_pulido_"><h2>Twitch</h2></a>
+                        <p>Amo interactuar con la gente, es por eso que estoy haciendo streams en donde hago experimentos super divertidos</p>
+                    </div>
+                </div>              
             </div>
+           
             <p>¿Que estas esperando? Acompañame a hacer este increible viaje</p>
             <a href="#blog"><i class="fas fa-chevron-down down"></i></a>
         </section>
-        <section id="blog"></section>
-        <section id="experimentos"></section>
+        <section id="blog">
+            <h2>Ultimas entradas</h2>
+            <div class="entradas row">
+                <div class="col-md-4">
+                    <a href="https://www.youtube.com/c/hectorAndresPulidoPalmar"><h3>Como hacer un juego online</h3></a>
+                    <p>Con mis videos quiero que mas personas puedan aprender cosas nuevas de modo que su mundo cambie</p>
+                    <a href="#" class="btn btn-lg btn-secondary">Leer todo.</a>
+                </div>
+                <div class="col-md-4">                         
+                    <a href="https://twitter.com/Hector_Pulido_"><h3>Como aprendi a hablar japones</h3></a>
+                    <p>Pienso luego existo, pero si no twitteo mis pensamientos es como si no los hubiera twitteado nunca</p>
+                    <a href="#" class="btn btn-lg btn-secondary">Leer todo.</a>
+                </div>
+                <div class="col-md-4">
+                    <a href="https://www.twitch.tv/hector_pulido_"><h3>Por que sigo usando unity</h3></a>
+                    <p>Amo interactuar con la gente, es por eso que estoy haciendo streams en donde hago experimentos super divertidos</p>
+                    <a href="#" class="btn btn-lg btn-secondary">Leer todo.</a>
+                </div>
+            </div>
+            <a href="#" class="btn btn-lg btn-secondary">Ver todas las entradas</a>
+        </section>
+        <section id="experimentos">
+                <h2>Ultimos experimentos</h2>
+                <div class="entradas row">
+                    <div class="col-md-4">
+                        <a href="https://www.youtube.com/c/hectorAndresPulidoPalmar"><h3>Como hacer un juego online</h3></a>
+                        <p>Con mis videos quiero que mas personas puedan aprender cosas nuevas de modo que su mundo cambie</p>
+                        <a href="#" class="btn btn-lg btn-secondary">Leer todo.</a>
+                    </div>
+                    <div class="col-md-4">                         
+                        <a href="https://twitter.com/Hector_Pulido_"><h3>Como aprendi a hablar japones</h3></a>
+                        <p>Pienso luego existo, pero si no twitteo mis pensamientos es como si no los hubiera twitteado nunca</p>
+                        <a href="#" class="btn btn-lg btn-secondary">Leer todo.</a>
+                    </div>
+                    <div class="col-md-4">
+                        <a href="https://www.twitch.tv/hector_pulido_"><h3>Por que sigo usando unity</h3></a>
+                        <p>Amo interactuar con la gente, es por eso que estoy haciendo streams en donde hago experimentos super divertidos</p>
+                        <a href="#" class="btn btn-lg btn-secondary">Leer todo.</a>
+                    </div>
+                </div>
+                <a href="#" class="btn btn-lg btn-secondary">Ver todos los experimentos</a>
+        </section>
         <footer>
-
+            <a class="" href="#">Hector Pulido 2018</a>
         </footer>
+
+
+        <!-- Bootstrap core JavaScript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+        <script src="../../assets/js/vendor/popper.min.js"></script>
+        <script src="../../dist/js/bootstrap.min.js"></script>
     </body>
 </html>

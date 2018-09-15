@@ -1,77 +1,69 @@
-/* Links */
-a
-{
-    text-decoration: none;
+a,
+a:focus,
+a:hover {
+	color: #fff;
 }
 
-a, a:focus, a:hover {
-    color: #fff;
+.nav-masthead .nav-link {
+	padding: .25rem 0;
+	font-weight: 700;
+	color: rgba(255, 255, 255, .5);
+	background-color: transparent;
+	border-bottom: .25rem solid transparent;
 }
-/* Navbar */
-.nav-item
-{   
-     padding: 1.5em 1em;
-}
-.navbar-nav
-{
-    width: 100%;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /*position: fixed;*/    
+.nav-masthead .nav-link:hover,
+.nav-masthead .nav-link:focus {
+	border-bottom-color: rgba(255, 255, 255, .25);
 }
-.navbar-nav a:focus, .navbar-nav a:hover
+
+.nav-masthead .nav-link + .nav-link {
+	margin-left: 1rem;
+}
+
+.nav-masthead .active {
+	color: #fff;
+	border-bottom-color: #fff;
+}
+
+.masthead
 {
-    background-color: rgba(255, 255, 255, 0.5);
+	background: #333;
+	width: 100%;
+	position: absolute;
 }
-/* items */
+
+html,
+body {
+	height: 100%;
+	background-color: #333;
+}
+
+section
+{
+	width: 100%;
+	padding: 6em;
+		
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+   
+}
+footer
+{
+	width: 100%;
+	background-color: #333;
+}
+
 .bar
 {
-    background: white;
-    width: 75%;
-    height: 0.25em;
-    margin-bottom: 1em;
-    text-align: center;
-    align-items: center;
+	width: 75%;
+	background: #fff;
+	height: 0.25em;
 }
 .down
 {
-    font-size: 3em;
-}
-/* section */
-section
-{
-    width: 100%;
-    padding: 6em;
-        
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-/* essentials */
-html, body
-{
-    height: 100%;    
-    width: 100%;
-    margin: 0;
-}
-
-html
-{
-    font-family: 'Open Sans', sans-serif;
-}
-
-body
-{
-    background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.50)), url("../Images/Index.jpg");
-    background-color: rgba(109, 180, 242, 0.315);
-    background-size: cover;
-    background-position: center;
-}
-*, ::after, ::before {
-    box-sizing: border-box;
-
+	font-size: 3em;
 }

@@ -1,0 +1,35 @@
+#Titulo
+{
+    color: #fff;
+    text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
+    background-size: cover;
+    background-position: center;
+    height: auto;
+    text-align: right;
+}
+#Titulo h1 
+{
+    font-size: 2em;
+}
+#Content
+{
+    background-color: #fff;
+    color: #333;
+    text-align: justify;
+    text-justify: inter-word;
+    padding: 2em 6em;
+}
+#Content p
+{
+    width: 100%;
+}
+#Content a
+{
+    color: #333;
+    text-decoration: underline;
+}
+#Content img
+{
+    max-width: 100%;
+    max-height: 20em;
+}
