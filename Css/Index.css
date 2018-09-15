@@ -1,0 +1,67 @@
+/*Hero*/
+#hero
+{   
+    color: #fff;
+    padding: 6em;      
+    height: 600px ; 
+}
+#hero h1
+{
+    font-size: 3em;
+    margin-bottom: 0;
+}
+ /*sobremi*/
+#sobremi
+{
+    color: #000;
+    padding: 6em; 
+    padding-top: 1em;
+    background-color: #fff;
+}
+#sobremi .bar
+{
+    background: #000;
+    width: auto;
+}
+#sobremi .down
+{
+    margin-top: 1em;
+    margin-bottom: 0em;
+    color: #000;
+}
+#fotoSobreMi img
+{
+    width: 100%;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#fotoSobreMi
+{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.descripcion {
+    display: grid;
+    grid-column-gap: 1em;
+    grid-template-columns: 30% auto;
+    padding: 0.5em;
+}
+ /*Redes*/
+#Redes
+{
+    display: grid;
+    grid-column-gap: 1em;
+    grid-template-columns: auto auto auto;
+    padding: 2em;  
+}
+#Redes a, #Redes a:focus, #Redes a:hover 
+{
+    color: #000;
+}
+#Redes a:focus, #Redes a:hover
+{
+    color: rgb(54, 54, 54);
+}
