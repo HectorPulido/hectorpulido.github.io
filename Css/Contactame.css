@@ -1,0 +1,37 @@
+#sobremi
+{
+    color: #fff;
+    text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
+    background: linear-gradient(#00000080, #00000080), url("../Images/Index.jpg");
+    background-size: cover;
+    background-position: center;
+}
+#fotoSobreMi img
+{
+    width: 100%;
+    border-radius: 50%;
+}
+#sobremi .bar
+{
+    width: 100%;
+}
+#sobremi a, #sobremi a:focus, #sobremi a:hover
+{
+    color: #fff;
+    text-decoration: none;
+}
+
+#Contactame
+{
+    padding: 2em;
+    background-color: #fff;
+    color: #333;
+}
+#Contactame p
+{
+    font-size: 3em;
+}
+#Contactame textarea
+{
+    height: 10em;
+}
