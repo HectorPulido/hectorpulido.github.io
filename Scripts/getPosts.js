@@ -33,13 +33,11 @@ client.get('https://api.github.com/repos/'+username+'/'+repository+'/contents/' 
         if(element.name !== "index.html")
         {
             let url = element.html_url.replace("github.com/"+username+"/", "").replace("/blob/master", "").replace("/tree/master", "");
-            let data;
             client.get(url + "/content.json", (d)=>
             {
-                data = JSON.parse(d);
-                console.log(data);
+                let data = JSON.parse(d);
+                posts.innerHTML += postBase.replace("{Titulo}"," hola mundo " + data.Title).replace("{Contenido}", " hola mundo " +data.Description).replace("{Link}", url);
             });
-            posts.innerHTML += postBase.replace("{Titulo}"," hola mundo " + data.Title).replace("{Contenido}", " hola mundo " +data.Description).replace("{Link}", url);
     
         }
     });
