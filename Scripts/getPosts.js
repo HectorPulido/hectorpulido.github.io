@@ -37,6 +37,7 @@ client.get('https://api.github.com/repos/'+username+'/'+repository+'/contents/' 
             client.get(url + "/content.json", (d)=>
             {
                 data = JSON.parse(d);
+                console.log(d);
             });
             posts.innerHTML += postBase.replace("{Titulo}",element.name).replace("{Contenido}",url + "/content.json" +data).replace("{Link}", url);
     
