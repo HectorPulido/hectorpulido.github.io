@@ -4,7 +4,7 @@ let postBase = `<div class="col-md-4">
                 <a href="{Link}" class="btn btn-lg btn-secondary">Leer todo.</a>
                 </div>`;
 
-let posts = document.getElementById("Entradas");
+let posts = document.getElementById("entradas");
 
 class HttpClient {
     constructor() {
