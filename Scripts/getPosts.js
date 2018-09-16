@@ -38,7 +38,7 @@ client.get('https://api.github.com/repos/'+username+'/'+repository+'/contents/' 
             {
                 data = JSON.parse(d);
             });
-            posts.innerHTML += postBase.replace("{Titulo}",element.name).replace("{Contenido}",data).replace("{Link}", url);
+            posts.innerHTML += postBase.replace("{Titulo}",element.name).replace("{Contenido}",url + "/content.json" +data).replace("{Link}", url);
     
         }
     });
