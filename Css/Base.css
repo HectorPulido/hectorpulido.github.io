@@ -30,7 +30,6 @@ a:hover {
 {
 	background: #333;
 	width: 100%;
-	position: absolute;
 }
 
 html,
@@ -66,4 +65,12 @@ footer
 .down
 {
 	font-size: 3em;
+}
+
+@media (max-width: 600px) 
+{
+	section
+	{
+		padding: 1em;
+	}
 }

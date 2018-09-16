@@ -16,7 +16,6 @@
     background-color: #fff;
     color: #333;
     text-align: justify;
-    text-justify: inter-word;
     padding: 2em 6em;
 }
 #Content h2
@@ -52,4 +51,12 @@ iframe
 {
     text-decoration: none;
     color: #fff;
+}
+
+@media (max-width: 600px) 
+{
+	#Content
+	{
+		padding: 1em;
+	}
 }
