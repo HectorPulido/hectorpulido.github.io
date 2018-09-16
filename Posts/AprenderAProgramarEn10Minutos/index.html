@@ -1,0 +1,314 @@
+<!DOCTYPE HTML>
+<html lang="es">
+	<head>
+		<title>Hector Pulido - Just Me</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+		
+		<!-- Bootstrap core CSS -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+
+		<link rel="stylesheet" href="../../Css/Base.css">
+		<link rel="stylesheet" href="../../Css/Post.css">
+	</head>
+	<body class="text-center">
+		<header class="masthead mb-auto">
+			<div class="inner">
+			<nav class="nav nav-masthead justify-content-center">
+				<a class="nav-link " href="https://hectorpulido.github.io">Home</a>
+				<a class="nav-link" href="https://hectorpulido.github.io#sobremi">Sobre mi</a>
+				<a class="nav-link active" href="https://hectorpulido.github.io/Posts">Blog</a>
+				<a class="nav-link" href="#">Experimentos</a>
+				<a class="nav-link" href="https://hectorpulido.github.io/Contactame">Contactame</a>
+			</nav>
+			</div>
+		</header>
+
+		<section id ="Titulo">
+			<h1>Aprender a programar en solo 10 minutos</h1>
+			<div class="bar"></div>
+			<p>Te voy a enseñar a programar desde cero mientras te enseño 2 lenguajes de programacion, te enseñare c# y te enseñare python a la vez, dos lenguajes de programacion altamente utilizados y demandados.</p>
+		</section>
+		<section id ="Content">			
+			<iframe width="100%" height="315" src="https://www.youtube.com/embed/5Qgoy-urOCA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+			<p>La programación es uno de los Skills mas solicitados a día de hoy, los programadores son de los profesionales mejor pagados de todas las industrias de toda la historia, es por eso que es buena idea aprender a programar, en este post, en conjunto con el video de arriba te enseñare a programar de cero en 2 lenguajes de programación diferentes. </p>
+			<p>No es necesario que te pongas nervioso, la mayoría de los lenguajes funcionan igual, la sintaxis es diferente pero la lógica es la misma, y la lógica es esta que te mostrare a continuación. </p>
+			
+			<h2>Variables</h2>
+			<p>Lo primero que tienes que aprender son las variables, una variable no es más que una caja en la que poner cosas, nada interesante, estas variables pueden guardar distintos tipos de cosas, números, textos y preguntas de Si o No (Booleanos), puede contener tipos más complejos, pero si entiendes eso estas bien. </p>
+			<pre><code>
+PYHTON
+SoyUnaVariableTexto = "Hola Mundo"
+SoyUnaVariableNumero = 99
+SoyUnaVariableBooleana = True
+
+print(SoyUnaVariableTexto)
+print(SoyUnaVariableNumero)
+print(SoyUnaVariableBooleana)
+
+C#
+string SoyUnaVariableTexto = "Hola Mundo";
+int SoyUnaVariableNumero = 99;
+bool SoyUnaVariableBooleana = true;
+
+Console.WriteLine(SoyUnaVariableTexto);
+Console.WriteLine(SoyUnaVariableNumero);
+Console.WriteLine(SoyUnaVariableBooleana);
+			</code></pre>
+
+			<h2>Operaciones entre variables</h2>
+			<p>Con las variables puedes hacer todo tipo de cosas, como sumarlas entre sí, o convertir un tipo en otro tipo o hacer comparaciones las posibilidades son casi casi que infinitas, ya solo con esto puedes empezar a hacer cosas interesantes, ¿qué tal una calculadora? </p>
+
+			<pre><code>
+PYHTON
+SoyUnaVariableNumero = SoyUnaVariableNumero + 5
+SoyUnaVariableTexto = SoyUnaVariableTexto + " Que tal?"
+SoyUnaVariableBooleana = (SoyUnaVariableTexto == "Hola Mundo")
+
+C#
+SoyUnaVariableNumero = SoyUnaVariableNumero + 5;
+SoyUnaVariableTexto = SoyUnaVariableTexto + " Que tal?";
+SoyUnaVariableBooleana = (SoyUnaVariableTexto == "Hola Mundo");
+			</code></pre>
+
+			<h2>Condicionales</h2>
+			<p>Los booleanos son la parte más básica de la computación, son preguntas que se resuelven con un si o con un no, por ejemplo ¿Eres mayor de edad? ¿Ya estas suscrito a mi canal de Youtube? Son preguntas que pueden ser resueltas con el concepto de booleano, podemos preguntarle a la maquina si estas preguntas son si o no con un IF o Condicional</p>
+			<pre><code>
+PYTHON
+if SoyUnaVariableNumero > 99:
+	print("El numero es mayor a 99")
+elif SoyUnaVariableNumero < 90:
+	print("El numero es menor a 90")
+else :
+	print("El numero no es menor que 90 ni mayor que 99")
+
+C#
+if(SoyUnaVariableNumero > 99)
+{
+	Console.WriteLine("El numero es mayor a 99");
+}
+else if(SoyUnaVariableNumero < 90)
+{
+	Console.WriteLine("El numero es menor a 90");
+}
+else
+{
+	Console.WriteLine("El numero no es menor que 90 ni mayor que 99");
+}
+			</code></pre>
+			<p>Si la pregunta tiene una respuesta positiva se ejecuta un trozo de código, de lo contrario se ejecuta otra línea de código.</p>
+			<h2>Bucles</h2>
+			<p>Los bucles son trozos de código que se ejecutan muchas veces dependiendo de una comparación, tenemos dos tipos principales los bucles <b>For</b> y los bucles <b>While. </b></p>
+		<pre><code>
+PYTHON
+#Bucle for
+for i in range(0, SoyUnaVariableNumero):
+	print("Esta linea se ha ejecutado " + str(i) + " Veces")
+
+
+#While
+while SoyUnaVariableNumero > 100:
+	SoyUnaVariableNumero -= 1 
+print(SoyUnaVariableNumero)
+
+C#
+//Bucle for
+for(int i = 0 ; i < SoyUnaVariableNumero; i++)
+{
+	Console.WriteLine("Esta linea se ha ejecutado " + i + " Veces");
+}
+
+//While
+while(SoyUnaVariableNumero > 100)
+{
+	SoyUnaVariableNumero --; //Resta 1
+	Console.WriteLine(SoyUnaVariableNumero);
+}		
+			</code></pre>
+			<p>La diferencia principal entre estos dos tipos de bloques es que el While puede ser infinito, mientras que el For siempre tiene un límite, con esta estructura lógica ya podemos ir pensando en como funcionan los juegos, un ciclo While que ejecuta funciones como recargar la pantalla y colocar los elementos. </p> 
+			<h2>Arreglos</h2>
+			<p>Si seguimos con la analogía en donde una caja es una variable, un arreglo serian un montón de cajas enumeradas, todos los ítems de el arreglo tienen el mismo nombre, pero tienen un identificador o índice el cual sirve para diferenciarlos, cualquier tipo de dato puede convertirse en un arreglo, de esta manera podemos tener por ejemplo un arreglo con todos los juegos que has adquirido en Steam.</p>
+			<pre><code>
+PYTHON
+MiPrimerArreglo = []
+MiPrimerArreglo.append("Hola")
+MiPrimerArreglo.append("Mundo")
+MiPrimerArreglo.append("Como")
+MiPrimerArreglo.append("Estas")
+for i in range(0, len(MiPrimerArreglo)):
+	print(MiPrimerArreglo[i])
+
+C#
+string[] MiPrimerArreglo = new string[4];
+MiPrimerArreglo[0] = "Hola";
+MiPrimerArreglo[1] = "Mundo";
+MiPrimerArreglo[2] = "Como";
+MiPrimerArreglo[3] = "Estas";
+for(int i = 0 ; i < MiPrimerArreglo.Length; i++)
+{
+	Console.WriteLine(MiPrimerArreglo[i]);
+}					
+			</code></pre>
+			<p>Hay que tener cuidado ya que en Python los arreglos son dinámicos, ósea pueden contener tantos ítems como necesitemos, mientras que en C# son estáticos, primero hay que definir que tan grande es el arreglo. También es necesario saber que los índices empiezan en cero, por lo que el ultimo ítem siempre tendrá como valor el tamaño del arreglo menos uno.</p>
+
+			<h2>Funciones</h2>
+			<p>Muchas veces se da el caso de que tenemos que escribir muchas veces un trozo de código, el trabajo de las funciones es ponerle un nombre a uno de esos fragmentos de códigos para ejecutarlos en cualquier momento, las funciones pueden tener parámetros lo que vuelve mas dinamico el código, puedes verlo claramente en el ejemplo y además pueden retornar valores, eso es genial por que las se vuelven aún más y más dinámicas.</p>
+		<pre><code>
+PYTHON
+def MiPrimeraFuncion():
+	print("Hola Mundo")
+	
+def MiSegundaFuncion(parametro):
+	print("Hola Mundo" + parametro)
+
+def MiTerceraFuncion():
+	return "Hola Mundo"
+	
+
+MiPrimeraFuncion()
+MiSegundaFuncion("Que tal")
+print(MiTerceraFuncion())
+
+C#
+MiPrimeraFuncion();
+MiSegundaFuncion("Que tal");
+Console.WriteLine(MiTerceraFuncion());
+
+void MiPrimeraFuncion()
+{
+	Console.WriteLine("Hola Mundo");
+}
+void MiSegundaFuncion(string parametro)
+{
+	Console.WriteLine("Hola Mundo" + parametro);
+}
+string MiTerceraFuncion()
+{
+	return "Hola Mundo";
+}
+		</code></pre>
+		<p>Hay que tener ciertas consideraciones, en Python la función debe estar encima de la línea donde es llamada, en C# esto es irrelevante, sin embargo, en C# las funciones siempre deben ser llamadas dentro de otras funciones, usualmente será la función Main, lo veras luego cuando estés jugando con él código.</p>
+		<p>¿Ya estás viendo las relaciones no? Así es Console.WriteLine y Print, son funciones provenientes de el propio lenguaje, es interesante como hasta el propio lenguaje esta basado en estas simples reglas que te muestro aquí.</p>
+
+		<h2>Programacion orientada a Objetos</h2>
+		<p>Hasta ahora todo ha sido fácil y bonito, eso se termina aquí, Jajaja nope, esto de los objetos es lo que mas se le dificulta a las personas de entender, pero te lo explicare muy fácil, un objeto es solo un trozo de código en donde hay datos (Variables) y funciones, ¡es todo!</p>
+		<p>Imagina que tienes el objeto perro, ese perro tiene ciertos datos como su nombre o su edad y también algunas funciones, el perro puede comer o puede ladrar, el perro es un objeto, podemos también tener otro objeto como una persona, la persona tiene nombre, edad, puede también tener un empleo y algunas cosas más, esta persona tiene acciones, puede estudiar, trabajar, viajar, etc. ¡Las personas también son objetos!</p>
+		<p>¿Si lo miras así es muy fácil no? Este tipo de ideas o abstracciones (Variable, Función, Objetos) están pensadas para imitar la realidad que nos rodea, eso tiene dos ventajas, es mas intuitivo para los programadores y es mas fácil reutilizar el código.</p>
+		
+		<pre><code>
+PYTHON
+class Perro:
+	def __init__(self, nombre):  
+	self.nombre = nombre;
+	print("Hola soy " + self.nombre + " Soy un perro");
+	
+	def Comer(self, comida):  
+	print(self.nombre + " Esta comiendo " + comida);
+	
+	def Ladrar(self):  
+	print(self.nombre + ": Woof Woof");
+lulu = Perro("Lulu")
+lulu.Comer("Croquetas")
+lulu.Ladrar()
+
+C#
+public class Perro
+{
+	string nombre;
+	public Perro(string nombre)
+	{
+		this.nombre = nombre;
+		console.WriteLine("Hola soy " + nombre + " Soy un perro");
+	}
+	public void Comer(string comida)
+	{
+		console.WriteLine(nombre + " Esta comiendo " + comida);
+	}
+	public void Ladrar()
+	{
+		console.WriteLine(nombre + ": Woof Woof");
+	}
+}
+
+class MainClass {
+	public static void Main (string[] args){
+		Perro lulu = new Perro("Lulu");
+		lulu.Comer("Croquetas");
+		lulu.Ladrar();
+	}
+}
+		</code></pre>
+		<p>Ya esto es lo mas alto de la programación, no podemos abstraernos más, sin embargo, hay algo que si podemos hacer para mejorar aun mas nuestros conocimientos, los objetos pueden tener hijos… no literalmente, pero si podemos llegar a decir que un objeto hereda de otro sus propiedades y además tiene propiedades nuevas, por ejemplo ¿habíamos dicho que tanto las personas como los perros tienen nombre y edad y además comen no? Pues podemos asumir que son propiedades que heredan estos dos objetos de una clase superior, la clase Animal, los animales, todos los animales tienen nombre, edad y comen, pero los perros ladran y las personas piensan.</p>
+
+		<pre><code>	
+PYTHON
+class Animal:
+	def __init__(self, nombre):  
+		self.nombre = nombre;
+		print("Hola soy " + self.nombre);
+
+	def Comer(self, comida):  
+		print(self.nombre + " Esta comiendo " + comida);
+
+class Perro(Animal):
+	def Ladrar(self):  
+		print(self.nombre + ": Woof Woof");
+	
+class Humano(Animal):
+	def Pensar(self):  
+		print(self.nombre + ": Esta pensando...");
+
+C#
+public class Animal
+{
+	string nombre;
+	public Animal(string Animal)
+	{
+		this.nombre = nombre;
+		console.WriteLine("Hola soy " + nombre);
+	}
+	public void Comer(string comida)
+	{
+		console.WriteLine(nombre + " Esta comiendo " + comida);
+	}
+}
+public class Humano : Animal
+{
+	public void Pensar()
+	{
+		console.WriteLine(nombre + ": Esta pensando");
+	}
+}
+public class Perro : Animal
+{
+	public void Ladrar()
+	{
+		console.WriteLine(nombre + ": Woof Woof");
+	}
+}				
+		</code></pre>
+		
+		<p>Si has entendido todo hasta aqui ¡Felicidades! Ya conoces tus primeros dos lenguajes de programacion, ahora solo te queda practicar, hacer cosas interesantes, ¡Cambiar el mundo!, Ve tu puedes hacerlo, eres parte de la gran gran gran minoria estadistica que puede entender la programacion, eso significa que tienes todo el potencial que se te ocurra</p>
+		<p>Para practicar puedes <a href="https://repl.it">usar esta pagina</a> puedes practicar varios lenguajes a la vez sin descargar nada.</p>
+		<a class="Boton btn btn-danger" href="https://goo.gl/zoXJRC">¡Suscribete a mi canal de youtube para mas contenido!</a>
+		</section>
+		
+		<footer>
+			<a class="" href="#">Hector Pulido 2018</a>
+		</footer>
+		<script>
+			document.body.style.background = "linear-gradient(#00000080, #00000080), url('Img/Background.png')";
+		</script>
+		<!-- Bootstrap core JavaScript
+		================================================== -->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+		<script src="../../assets/js/vendor/popper.min.js"></script>
+		<script src="../../dist/js/bootstrap.min.js"></script>
+	</body>
+</html>
