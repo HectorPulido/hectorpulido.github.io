@@ -14,8 +14,6 @@
 		<meta property="og:image" content="Img/Background.png">
 		<meta name="twitter:card" content="summary_large_image">
 
-
-
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 		
@@ -114,6 +112,28 @@ r.forEach((element)=>
 			<p>Cuéntame en mi <a href=” https://twitter.com/Hector_Pulido_”> @Hector_Pulido_</a> que te parece este pedazo de locura que he montado, ¿tienes alguna forma de mejorarlo? Si es así me encantaría saber tu opinión.</p>
 			<a class="Boton btn btn-danger" href="https://goo.gl/zoXJRC">¡MAS CONTENIDO AQUI!</a>
 
+
+			<div id="share-buttons">
+					
+				<!-- Email -->
+				<a class="ReplaceLink" href="mailto:?Subject=Esto es increible&amp;Body=Mira lo que he encontrado {CURRENTURL}">
+					<img src="https://simplesharebuttons.com/images/somacro/email.png" alt="Email" />
+				</a>
+			
+				<!-- Facebook -->
+				<a class="ReplaceLink" href="http://www.facebook.com/sharer.php?u={CURRENTURL}" target="_blank">
+					<img src="https://simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" />
+				</a>
+				
+				<!-- LinkedIn -->
+				<a class="ReplaceLink" href="http://www.linkedin.com/shareArticle?mini=true&amp;url={CURRENTURL}" target="_blank">
+					<img src="https://simplesharebuttons.com/images/somacro/linkedin.png" alt="LinkedIn" />
+				</a>
+				<!-- Twitter -->
+				<a class="ReplaceLink" href="https://twitter.com/share?url={CURRENTURL}&amp;text=Mirad esto que he encontrado, es genial" target="_blank">
+					<img src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" />
+				</a>
+			</div>
 		</section>
 		
 		<footer>
@@ -122,6 +142,8 @@ r.forEach((element)=>
 		<script>
 			document.body.style.background = "linear-gradient(#00000080, #00000080), url('Img/Background.jpg')";
 		</script>
+		<script src="../../Scripts/Social.js"></script>
+
 		<!-- Bootstrap core JavaScript
 		================================================== -->
 		<!-- Placed at the end of the document so the pages load faster -->
