@@ -37,7 +37,7 @@ client.get('https://api.github.com/repos/'+username+'/'+repository+'/contents/' 
             {
                 i = i + 1;
                 let data = JSON.parse(d);
-                posts.innerHTML += postBase.replace("{Titulo}", data.Title).replace("{Contenido}", data.Description).replace("{Link}", url);
+                posts.innerHTML += postBase.replace("{Titulo}", data.Title).replace("{Contenido}", data.Description).replace("{Link}", url).replace("{Link}", url);
             });
             
             if(i>=3)
