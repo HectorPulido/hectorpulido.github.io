@@ -1,0 +1,122 @@
+<!DOCTYPE HTML>
+<html lang="es">
+	<head>
+		<title>Hector Pulido - Just Me</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+		
+		<!-- Bootstrap core CSS -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+
+		<link rel="stylesheet" href="../../Css/Base.css">
+		<link rel="stylesheet" href="../../Css/Post.css">
+	</head>
+	<body class="text-center">
+		<header class="masthead mb-auto">
+			<div class="inner">
+			<nav class="nav nav-masthead justify-content-center">
+				<a class="nav-link " href="https://hectorpulido.github.io">Home</a>
+				<a class="nav-link" href="https://hectorpulido.github.io#sobremi">Sobre mi</a>
+				<a class="nav-link active" href="https://hectorpulido.github.io/Posts">Blog</a>
+				<a class="nav-link" href="#">Experimentos</a>
+				<a class="nav-link" href="https://hectorpulido.github.io/Contactame">Contactame</a>
+			</nav>
+			</div>
+		</header>
+
+		<section id ="Titulo">
+			<h1>Como hice un Blog en Github</h1>
+			<div class="bar"></div>
+			<p>Github te permite crear paginas estaticas, pero... ¿un blog es dinamico no? a que te da curiosidad ¿eh?</p>
+		</section>
+		<section id ="Content">			
+			<p>Ya deberías saber (y si no lo sabes te lo explico) que github te permite poner paginas webs, el problema con estas paginas webs es que son estáticas, son más planas que la cara de la actriz principal de crepúsculo (¿cómo se llamaba?, recuérdamelo en mi twitter por favor <a href= "https://twitter.com/Hector_Pulido_"> @Hector_Pulido_</a>).</p>
+			<p>Estático es lo contrario a la definición de un blog, un blog debe tener links dinámicos debe ser fácil de leer y otro montón de cosas que serian un caos para quien lo administré, es por eso que me puse a buscar opciones.</p>
+			<h2>Firebase</h2>
+			<p>A estas alturas es difícil no haber oído hablar de firebase, es todo un unicornio, backend y administración de base de datos sin bases de datos, es perfecto para un proyecto como este, solamente tengo que usar algún framework como react y podría haber tardado un 2% de lo que tarde haciendo esto, sin embargo, quería dos cosas, la primera un reto y la segunda que fuera un proyecto fácil de “forkear”.</p>
+			<h2>Jekyll</h2>
+			<p>No mentiré, lo que intenta no es nada nuevo, Jekyll hace lo que necesito y además lo hace mejor, sin embargo, debo ser sincero, no me he dado el tiempo para aprender esta tecnología, además simplemente usar Jekyll no seria un reto para nada, algo que probablemente no sepas de mi es que soy egocéntrico así que difícilmente mi orgullo me permitirá usar Jekyll en un futuro cercano.</p>
+			<p>Así que hice todo de cero, utilizando únicamente la Api de github y mi ingenio me las arregle para tener algo funcional, antes de explicarte que hice te mostrare como crear esa página estática.</p>
+			<p>Una página estática igual es útil para varias cosas como una Landing Page o algún demo de Javascript o cosas así, por lo que probablemente te sea útil esto, simplemente debes crear un repositorio con esta estructura TuNombreDeUsuario.Github.Io, este además del nombre del repositorio será el dominio de la web (puedes poner un dominio propio pero por ahora dejémoslo asi), cuidado con las mayúsculas por que a github no le gusta que te equivoques con eso… 😩</p>
+			<img src="Img/CreandoUnRepositorio.png" alt="Creando Un Repositorio">
+			<p>Luego de que termines de crear el repositorio solo debes subir un archivo Html que haga las veces de Index, obvio también puedes agregar Css Y Javascript, así lo hice yo en este proyecto, solo ten cuidado con las mayúsculas, ¡a github no le gusta que cambies nada! Cuando ya tengas todo subido simplemente entra a la Url que elegiste y tu página debería estar On, para actualizarla simplemente sube archivos nuevos que remplacen a los antiguos y ya deberías tenerlo.</p>
+			<img src="Img/AsiSeVeElProyecto.png" alt="Asi Se Ve El Proyecto">
+			<p>Ya lo sencillo esta listo… ahora falta lo difícil hacer dinámica nuestra página, para ello he utilizado un script de javascript que hace uso de la Api de github, hay una carpeta especial en el repositorio donde están guardados todos los posts del blog, luego veras la estructura, pero lo mas importante es conocer los path exactos, el api de github te dará información sobre que archivos hay y mas importante EL LINK DE LA CARPETA 😱 Simplemente haciendo un Get Request a la Url <code>'https://api.github.com/repos/'+username+'/'+repository+'/contents/' + path</code></p>
+			<p>Dentro de la carpeta del post hay un archivo Json que tiene información sobre el Posts, como el Indice, el Titulo y una Microdescripcion, esos datos se los paso al DOM y así tengo los links dinámicos del blog.</p>
+			<pre><code>
+let postBase = `&lt;div class="col-md-4"&gt;
+		&lt;a href="{Link}"&gt;&lt;h3&gt;{Titulo}&lt;/h3&gt;
+		&lt;p&gt;{Contenido}&lt;/p&gt;&lt;/a&gt;
+		&lt;a href="{Link}" class="btn btn-lg btn-secondary"&gt;Leer todo.&lt;/a&gt;
+		&lt;/div&gt;`;
+
+let posts = document.getElementById("entradas");
+
+class HttpClient {
+	constructor() {
+		this.get = function (aUrl, aCallback) {
+			var anHttpRequest = new XMLHttpRequest();
+			anHttpRequest.onreadystatechange = function () {
+				if (anHttpRequest.readyState == 4 && anHttpRequest.status == 200)
+					aCallback(anHttpRequest.responseText);
+			};
+			anHttpRequest.open("GET", aUrl, true);
+			anHttpRequest.send(null);
+		};
+	}
+}
+
+const username = 'HectorPulido';
+const repository = 'hectorpulido.github.io';
+const path = 'Posts/';
+
+var client = new HttpClient();
+client.get('https://api.github.com/repos/'+username+'/'+repository+'/contents/' + path, function(response) {
+let r = JSON.parse(response);
+let i = 0;
+r.forEach((element)=>
+{
+	if(element.name !== "index.html")
+	{
+		let url = element.html_url.replace("github.com/"+username+"/", "").replace("/blob/master", "").replace("/tree/master", "");
+		client.get(url + "/content.json", (d)=>
+		{
+			i = i + 1;
+			let data = JSON.parse(d);
+			posts.innerHTML += postBase.replace("{Titulo}", data.Title).replace("{Contenido}", data.Description).replace("{Link}", url).replace("{Link}", url);
+		});
+		
+		if(i>=3)
+		{
+			return;
+		}
+	}
+});
+			</code></pre>
+
+			<p>Ya con eso tenemos un blog funcional, para crear un post, simplemente tenemos que crear una pagina nueva dentro de la carpeta designada, en mi caso así es como se ve la estructura del proyecto.</p>
+			<img src="img/EstructuraDelProyecto.png" alt="EstructuraDelProyecto">
+			<p>Cuéntame en mi <a href=” https://twitter.com/Hector_Pulido_”> @Hector_Pulido_</a> que te parece este pedazo de locura que he montado, ¿tienes alguna forma de mejorarlo? Si es así me encantaría saber tu opinión.</p>
+			<a class="Boton btn btn-danger" href="https://goo.gl/zoXJRC">¡Suscribete a mi canal de youtube para mas contenido!</a>
+
+		</section>
+		
+		<footer>
+			<a class="" href="#">Hector Pulido 2018</a>
+		</footer>
+		<script>
+			document.body.style.background = "linear-gradient(#00000080, #00000080), url('Img/Background.jpg')";
+		</script>
+		<!-- Bootstrap core JavaScript
+		================================================== -->
+		<!-- Placed at the end of the document so the pages load faster -->
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+		<script src="../../assets/js/vendor/popper.min.js"></script>
+		<script src="../../dist/js/bootstrap.min.js"></script>
+	</body>
+</html>
