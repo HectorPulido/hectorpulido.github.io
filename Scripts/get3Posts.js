@@ -1,6 +1,6 @@
 let postBase = `<div class="col-md-4">
                 <a href="{Link}"><h3>{Titulo}</h3>
-                <p>{Descripcion}</p></a>
+                <p>{Contenido}</p></a>
                 <a href="{Link}" class="btn btn-lg btn-secondary">Leer todo.</a>
                 </div>`;
 
