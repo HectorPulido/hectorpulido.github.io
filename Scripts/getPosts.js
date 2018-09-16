@@ -22,7 +22,7 @@ class HttpClient {
 
 const username = 'HectorPulido';
 const repository = 'hectorpulido.github.io';
-const path = '';
+const path = 'Posts/';
 
 var client = new HttpClient();
 client.get('https://api.github.com/repos/'+username+'/'+repository+'/contents/' + path, function(response) {
@@ -30,9 +30,17 @@ client.get('https://api.github.com/repos/'+username+'/'+repository+'/contents/' 
 
     r.forEach((element)=>
     {
-        //"html_url": "hectorpulido.github.io/blob/master/Css/Index.css",
-        url = element.html_url.replace("github.com/"+username+"/", "").replace("/blob/master", "");
-        posts.innerHTML += postBase.replace("{Titulo}",element.name).replace("{Contenido}",element.sha).replace("{Link}", url);
+        if(element.name !== "index.html")
+        {
+            let url = element.html_url.replace("github.com/"+username+"/", "").replace("/blob/master", "").replace("/tree/master", "");
+            let data;
+            client.get(url + "/content.json", (d)=>
+            {
+                data = JSON.parse(d);
+            });
+            posts.innerHTML += postBase.replace("{Titulo}",element.name).replace("{Contenido}",data).replace("{Link}", url);
+    
+        }
     });
 
 });
