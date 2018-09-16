@@ -74,3 +74,11 @@ footer
 		padding: 1em;
 	}
 }
+
+#share-buttons img {
+	width: 35px;
+	padding: 5px;
+	border: 0;
+	box-shadow: 0;
+	display: inline;
+}
