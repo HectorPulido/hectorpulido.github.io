@@ -1,0 +1,85 @@
+body{
+    background: #8E2DE2;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #4A00E0, #8E2DE2);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #4A00E0, #8E2DE2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    color: white;
+}
+.navBar{
+    position: fixed;
+    width: 100%;
+}
+
+.navBar-second{
+    background: #222;
+    top: 0;
+}
+
+.navBar-first{
+    background: rgba(0,0,0,0.44);
+    position: fixed;
+    bottom: 0;
+}
+
+.navBar ul {
+    margin: 1em;
+    display: flex;
+
+    flex-direction: row;  /* make main axis vertical */
+    justify-content: center; /* center items vertically, in this case */
+    align-items: center;     /* center items horizontally, in this case */
+}
+.navBar ul li {
+    flex: 1;
+    list-style-type: none;
+    text-align: center;     /* will center text in <p>, which is not a flex item */
+    height: 100%;
+}
+.navBar ul li a {
+    color: white;
+    height: 100%;
+}
+
+#hero{
+    margin-top: 2em;
+}
+
+.jumbotron{
+    color: #333;
+}
+.images img{
+    margin: 1em;
+}
+.flex-center{
+    display: flex;
+    flex-direction: row;  /* make main axis vertical */
+    justify-content: center; /* center items vertically, in this case */
+    align-items: center;     /* center items horizontally, in this case */
+}
+
+.img-h-150px{
+    max-height: 100px;
+}
+.img-h-200px{
+    max-height: 200px;
+}
+
+.container{
+    max-width: 800px;
+}
+.round-img{
+    margin: 1em;
+    border-radius: 50%;
+}
+.shadow{
+    -webkit-box-shadow: -2px 5px 24px 0px rgba(0,0,0,0.44);
+    -moz-box-shadow: -2px 5px 24px 0px rgba(0,0,0,0.44);
+    box-shadow: -2px 5px 24px 0px rgba(0,0,0,0.44);
+}
+.pl-5px{
+    padding-left: 15px;
+}
+.mb-10{
+    margin-bottom: 1em;
+}
