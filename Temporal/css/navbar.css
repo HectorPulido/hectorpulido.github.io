@@ -1,0 +1,35 @@
+.navBar{
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+}
+
+.navBar-second{
+    background: #222;
+    top: 0;
+}
+
+.navBar-first{
+    background: rgba(0,0,0,0.44);
+    position: fixed;
+    bottom: 0;
+}
+
+.navBar ul {
+    margin: 1em;
+    display: flex;
+
+    flex-direction: row;  /* make main axis vertical */
+    justify-content: center; /* center items vertically, in this case */
+    align-items: center;     /* center items horizontally, in this case */
+}
+.navBar ul li {
+    flex: 1;
+    list-style-type: none;
+    text-align: center;     /* will center text in <p>, which is not a flex item */
+    height: 100%;
+}
+.navBar ul li a {
+    color: white;
+    height: 100%;
+}

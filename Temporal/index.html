@@ -2,20 +2,29 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">  
+
     <title>Hector Pulido</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" 
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/particles.css">
-</head>
-<body> 
+    <link rel="stylesheet" href="css/loading.css">
 
-    <header class="navBar navBar-first shadow" style="">
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+
+    <script src="js/firebaseAuth.js"></script>
+    <script src="js/heroApp.js"></script>
+</head>
+<body ng-app="heroApp" ng-controller="heroController"> 
+    <header class="navBar navBar-first shadow">
         <ul>
             <li><a href="#hero">Home</a></li>
             <li><a href="#projects">Projects</a></li>
@@ -28,20 +37,17 @@
         <div class="container">
             <div class="jumbotron shadow">
                 <h1 class="text-center">Hector Pulido</h1>
+                <br>
                 <p class="text-center">Amo los videojuegos, sobre todo cuando los hago yo
                     <br>Admiro a la inteligencia, sobre todo cuando es artificial
-                    <br>La programacion es lo mio</p>            
-                <div class="flex-center images">
-                    <div>
-                        <img class="round-img shadow img-h-150px" src="img/Unity.png" alt="">
-                    </div>
-                    <div>
-                        <img class="round-img shadow img-h-150px" src="img/MachineLearning.png" alt="">
-                    </div>
-                    <div>
-                        <img class="round-img shadow img-h-150px" src="img/Backend.png" alt="">
-                    </div>
+                    <br>La programacion es lo mio</p>  
+                <br>
+                <div class="grid images">
+                    <img class="round-img-m shadow-m img-h-100px" src="img/Unity.png" alt="">
+                    <img class="round-img-m shadow-m img-h-100px" src="img/MachineLearning.png" alt="">
+                    <img class="round-img-m shadow-m img-h-100px" src="img/Backend.png" alt="">
                 </div>
+                <br>
                 <div class="flex-center">
                     <img class="round-img img-h-200px shadow" src="https://picsum.photos/300/300" alt="">
                 </div>
@@ -49,54 +55,39 @@
         </div>
     </section>
 
-    <section id="projects">
+    <section id="projects" data-ng-init="loadPosts()">
         <div class="container">
             <div class="jumbotron shadow">
                 <h2 class="text-center">A ver que hay por aqui...</h2>
                 <br>
                 <div class="flex-center">
-                    <input type="text" class="form-control" placeholder="Buscar..." aria-describedby="addon-wrapping">
-                    <a href="#"><i class="fas fa-search pl-5px"></i></a>
+                    <input type="text" ng-model="search" class="form-control" placeholder="Buscar..." aria-describedby="addon-wrapping">
+                    <a class="btn btn-link some-cool-blue"><i class="fas fa-search"></i></a>
                 </div>
+
                 <div class="flex-center">
-                    <a href="#" class="btn btn-link">Unity</a>
-                    <a href="#" class="btn btn-link">Machine learning</a>
-                    <a href="#" class="btn btn-link">Backend</a>
+                    <a ng-click="search = 'Unity'" class="btn btn-link some-cool-blue">Unity</a>
+                    <a ng-click="search = 'Machine Learning'" class="btn btn-link some-cool-blue">Machine learning</a>
+                    <a ng-click="search = 'Backend'" class="btn btn-link some-cool-blue">Backend</a>
                 </div>
                 <br>
-                <div class="container">
-                    <div class="row flex-center mb-10">
-                        <div class="col">
-                            <img class="img-h-200px shadow" src="https://picsum.photos/300/300" alt="">
-                        </div>
-                        <div class="col">
-                            <img class="img-h-200px shadow" src="https://picsum.photos/300/300" alt="">
-                        </div>
-                        <div class="col">
-                            <img class="img-h-200px shadow" src="https://picsum.photos/300/300" alt="">
+                <div class="grid" ng-show="loading">
+                    <div>
+                        <div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+                    </div>
+                </div>
+                <div class="grid" ng-show="!loading">
+                    <div ng-repeat="d in data | limitTo:9 | filter:search">
+                        <div class="card" style="width: 18rem;">
+                            <img src="{{d.img}}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="text-center card-title">{{d.name}}</h5>
+                                <a href="#" class="btn btn-link some-cool-blue">Ver mas...</a>
+                            </div>
                         </div>
                     </div>
-                    <div class="row flex-center mb-10">
-                        <div class="col">
-                            <img class="img-h-200px shadow" src="https://picsum.photos/300/300" alt="">
-                        </div>
-                        <div class="col">
-                            <img class="img-h-200px shadow" src="https://picsum.photos/300/300" alt="">
-                        </div>
-                        <div class="col">
-                            <img class="img-h-200px shadow" src="https://picsum.photos/300/300" alt="">
-                        </div>
-                    </div>
-                    <div class="row flex-center mb-10">
-                        <div class="col">
-                            <img class="img-h-200px shadow" src="https://picsum.photos/300/300" alt="">
-                        </div>
-                        <div class="col">
-                            <img class="img-h-200px shadow" src="https://picsum.photos/300/300" alt="">
-                        </div>
-                        <div class="col">
-                            <img class="img-h-200px shadow" src="https://picsum.photos/300/300" alt="">
-                        </div>
+                    <div ng-show="(data | filter:search).length == 0">
+                        <h5>No hay resultados para esta busqueda.</h5>
                     </div>
                 </div>
             </div>
@@ -104,7 +95,6 @@
     </section>
 
     <section id="blog">
-
     </section>
 
     <section id="skills">
@@ -119,9 +109,10 @@
     <br>    <br>    <br>    <br>    <br>    <br>    <br>    <br>    <br>    <br>    <br>    <br>    <br>    <br>    <br>    <br>    <br>    <br>    <br>    <br>    <br>    <br>    <br>    <br>    <br>    <br>    <br>    <br>    <br>    <br>    <br>    <br>    <br>    <br>    <br>    <br>    <br>    <br>    <br>    <br>    <br>    <br>    <br>    <br>    <br>    <br>    <br>    <br>    <br>    <br>    <br>    <br>    <br>    <br>    <br>    <br>
 
     <div id="particle-container"></div>
+
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script src="js/particles.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-</body>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script></body>
 </html>
